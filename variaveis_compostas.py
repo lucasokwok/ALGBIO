@@ -100,3 +100,25 @@ print("Pop na posição 2:", frutas)
 # .remove(valor) → remove o conteúdo específico
 frutas.remove('banana')
 print("Remove 'banana':", frutas)
+
+# ### LIST COMPREHENSION
+
+# Criando uma lista com os quadrados de 0 a 9 (forma tradicional)
+quadrados = []
+for i in range(10):
+    quadrados.append(i ** 2)
+print("Quadrados (forma tradicional):", quadrados)
+
+# Usando list comprehension
+quadrados_comp = [i ** 2 for i in range(10)]
+print("Quadrados (com list comprehension):", quadrados_comp)
+
+# Exemplo com condição: apenas quadrados de números pares
+pares_quadrados = [i ** 2 for i in range(10) if i % 2 == 0]
+print("Quadrados de pares:", pares_quadrados)
+
+# Transformar lista de nomes para maiúsculas usando list comprehension
+nomes = ['ana', 'bruno', 'carla']
+nomes_maiusculos = [nome.upper() for nome in nomes]
+print("Nomes em maiúsculo:", nomes_maiusculos)
+
