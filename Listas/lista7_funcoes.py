@@ -1,2 +1,0 @@
-def fatorial(n : int):
-    
