@@ -96,4 +96,10 @@ def cossenhiper(rad:float):
     senh = pow((pow(cosh,2) - 1),1/2)
     return cosh, senh
 
-print(cossenhiper(0))
+# print(cossenhiper(0))
+
+# OUTRA p1 antiga
+#2. 
+#a) funcao para remover todos os elementos duplicados de uma lista
+def remove_dup(lst):
+    
