@@ -16,7 +16,7 @@
 #     elif 25 <= imc <= 29.9: 
 #         situacao = "Sobrepeso"
 #     else:
-#         situacao = "Obesidade"
+#         situacao = "Obesidade" #faltou a situação exame que é média final >= 3
 
 #     pessoa = {
 #         "nome" : nome,
@@ -101,5 +101,72 @@ def cossenhiper(rad:float):
 # OUTRA p1 antiga
 #2. 
 #a) funcao para remover todos os elementos duplicados de uma lista
-def remove_dup(lst):
-    
+def remover_duplicados(lista):
+    resultado = []
+    for item in lista:
+        if item not in resultado:
+            resultado.append(item)
+    return resultado
+
+
+vetor = [1,1,1,1,1,2,2,2,2]
+vetor = remover_duplicados(vetor)
+
+# print(vetor)
+
+#b)
+import numpy as np
+def maiormenor(lst : list):
+    maior = lst[0]
+    menor = lst[0]
+
+    for i in range(len(lst)):
+        if maior < lst[i]:
+            maior = lst[i]
+        if menor > lst[i]:
+            menor = lst[i]
+    return maior, menor
+
+def maiormenornp(lst : list):
+    a = np.array([lst])
+    return int(a.max()), int(a.min())
+
+# print(maiormenor([1,2,3,4,1,2,3,12,3,46,7, 0, -7]))
+# print(maiormenornp([1,2,3,4,1,2,3,12,3,46,7, -2]))
+
+#3. 
+def soma_digitos():
+    numero = input("Digite um número inteiro: ")
+    soma = 0
+    for digito in numero:
+        soma += int(digito)    
+    print(f"Soma dos dígitos: {soma}")
+
+dados = {
+    "nome": "Lucas",
+    "idade": 21,
+    "curso": "Engenharia",
+    "ativo": True
+}
+
+for chave, valor in dados.items():
+    print(f"{chave} → {valor}")
+
+def quadrados_pares(lista):
+    return [x ** 2 for x in lista if x % 2 == 0]
+
+entrada = [1, 2, 3, 4, 5, 6]
+saida = quadrados_pares(entrada)
+print(saida)  # Saída: [4, 16, 36]
+
+#p ajudar a entender list comprehension
+#Aqui está uma função simples que usa list comprehension para filtrar apenas os números pares de uma lista:
+
+def filtrar_pares(lista):
+    return [x for x in lista if x % 2 == 0]
+
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+pares = filtrar_pares(numeros)
+print(pares)  # Saída: [2, 4, 6, 8, 10]
+
+
